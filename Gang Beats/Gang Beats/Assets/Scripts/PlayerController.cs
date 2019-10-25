@@ -18,13 +18,27 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        FaceMouse();
+        Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         moveVelocity = moveInput * speed;
     }
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+
+        Vector2 moveAmount = rb.position + moveVelocity * Time.fixedDeltaTime;
+        rb.MovePosition(moveAmount);
+
+    }
+
+    void FaceMouse() {
+
+        Vector3 MousePosition = Input.mousePosition;
+        MousePosition = Camera.main.ScreenToWorldPoint(MousePosition);
+
+        Vector2 direction = new Vector2(MousePosition.x - transform.position.x, MousePosition.y - transform.position.y);
+        transform.up = direction;
+
     }
 
 }
