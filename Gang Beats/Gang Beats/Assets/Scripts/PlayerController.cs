@@ -5,30 +5,40 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
+    public Animator mainAnimator;
+
     private Rigidbody2D rb;
     private Vector2 moveVelocity;
+    private Vector2 moveInput;
 
 
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();    
+        rb = GetComponent<Rigidbody2D>();
+        moveInput = new Vector2();
     }
 
     // Update is called once per frame
     void Update()
     {
         FaceMouse();
-        Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        moveInput = moveInput.normalized;
         moveVelocity = moveInput * speed;
+
+        if (Input.GetMouseButtonDown(0)) {
+
+            mainAnimator.SetTrigger("Attack");
+
+        }
+
     }
 
     void FixedUpdate()
     {
-
-        Vector2 moveAmount = rb.position + moveVelocity * Time.fixedDeltaTime;
-        rb.MovePosition(moveAmount);
-
+        rb.angularVelocity = 0;
+        rb.velocity = moveVelocity * Time.fixedDeltaTime;
     }
 
     void FaceMouse() {
