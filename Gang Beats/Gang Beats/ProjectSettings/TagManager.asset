@@ -41,3 +41,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Deep_groupd
+    uniqueID: 2251543277
+    locked: 0
+  - name: Middle_ground
+    uniqueID: 362763559
+    locked: 0
+  - name: Road_layer
+    uniqueID: 3738532631
+    locked: 0
+  - name: Entities_layer
+    uniqueID: 1768785833
+    locked: 0
+  - name: Player
+    uniqueID: 3432580511
+    locked: 0
+  - name: Higher
+    uniqueID: 1383029057
+    locked: 0
