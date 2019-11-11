@@ -63,6 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\NewPlayerController2.cs" />
+    <Compile Include="Assets\Scripts\NewPlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Brandon/Desktop/Uni/Comp4920/COMP4920-Assignment/Gang Beats/Gang Beats/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
