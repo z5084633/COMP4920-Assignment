@@ -9,10 +9,16 @@ public class NewPlayerController : MonoBehaviour
     public Animator mainAnimator;
     public float jumpForce = 20;
     public GameObject attackCollider;
+    public bool playerOne;
+
+    public int maxHealth = 120;
+    private int health;
 
     private Rigidbody2D rb;
+    private bool isDead = false;
     private float moveHorizontal;
     private bool facingRight = true;
+    
     
     private bool isGrounded = true;
     public Transform groundCheck;
@@ -23,6 +29,7 @@ public class NewPlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        health = maxHealth;
         attackCollider.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
     }
@@ -30,23 +37,48 @@ public class NewPlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveHorizontal = Input.GetAxisRaw("Horizontal") * speed;
 
+        if (isDead) {
+            return;
+        }
+
+        ////////// key input start
+        if (playerOne)
+        {
+            moveHorizontal = Input.GetAxisRaw("Horizontal") * speed;
+            if (Input.GetKeyDown(KeyCode.W) && isGrounded)
+            {
+                rb.AddForce(Vector2.up * jumpForce);
+            }
+
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                mainAnimator.SetTrigger("attack");
+            }
+
+        }
+        else
+        {
+            moveHorizontal = Input.GetAxisRaw("Horizontal 2") * speed;
+            if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
+            {
+                rb.AddForce(Vector2.up * jumpForce);
+            }
+
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                mainAnimator.SetTrigger("attack");
+            }
+        }
+
+        ///face player the right way
         if (!facingRight && moveHorizontal > 0) {
             Flip();
         } else if (facingRight && moveHorizontal < 0) {
             Flip();
-        }
+        }      
 
-        if (Input.GetKeyDown(KeyCode.W) && isGrounded) {
-            rb.AddForce(Vector2.up * jumpForce);
-        }
-
-        if (Input.GetKeyDown(KeyCode.S) )
-        {
-            mainAnimator.SetTrigger("attack");
-        }
-
+        ///moving animation
         if (moveHorizontal != 0)
         {
             mainAnimator.SetBool("moving", true);
@@ -60,9 +92,11 @@ public class NewPlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (isDead) {
+            return;
+        }
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
-
         rb.velocity = new Vector2(moveHorizontal, rb.velocity.y);
     }
 
@@ -73,6 +107,19 @@ public class NewPlayerController : MonoBehaviour
         Scaler.x *= -1;
         transform.localScale = Scaler;
     
+    }
+
+    public void takeDamage(int amount) {
+
+        health -= amount;
+        if (health <= 0) {
+            killPlayer();
+        }
+    }
+
+    void killPlayer() {
+        isDead = true;
+        mainAnimator.SetBool("death", true);
     }
 
     void Attack1Start() {
@@ -86,5 +133,10 @@ public class NewPlayerController : MonoBehaviour
 
         attackCollider.SetActive(false);
 
+    }
+
+    public int getHealth()
+    {
+        return health;
     }
 }
