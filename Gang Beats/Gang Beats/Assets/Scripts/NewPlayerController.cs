@@ -8,6 +8,7 @@ public class NewPlayerController : MonoBehaviour
     public float speed;
     public Animator mainAnimator;
     public float jumpForce = 20;
+    public GameObject attackCollider;
 
     private Rigidbody2D rb;
     private float moveHorizontal;
@@ -22,6 +23,7 @@ public class NewPlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        attackCollider.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -38,6 +40,20 @@ public class NewPlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W) && isGrounded) {
             rb.AddForce(Vector2.up * jumpForce);
+        }
+
+        if (Input.GetKeyDown(KeyCode.S) )
+        {
+            mainAnimator.SetTrigger("attack");
+        }
+
+        if (moveHorizontal != 0)
+        {
+            mainAnimator.SetBool("moving", true);
+        }
+        else
+        {
+            mainAnimator.SetBool("moving", false);
         }
 
     }
@@ -57,5 +73,18 @@ public class NewPlayerController : MonoBehaviour
         Scaler.x *= -1;
         transform.localScale = Scaler;
     
+    }
+
+    void Attack1Start() {
+
+        attackCollider.SetActive(true);
+
+    }
+
+    void Attack1End()
+    {
+
+        attackCollider.SetActive(false);
+
     }
 }

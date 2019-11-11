@@ -44,6 +44,19 @@ public class NewPlayerController2 : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce);
         }
 
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            mainAnimator.SetTrigger("attack");
+        }
+
+        if (moveHorizontal != 0)
+        {
+            mainAnimator.SetBool("moving", true);
+        }
+        else {
+            mainAnimator.SetBool("moving", false);
+        }
+
     }
 
     void FixedUpdate()
