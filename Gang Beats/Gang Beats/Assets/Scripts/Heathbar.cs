@@ -9,7 +9,7 @@ public class Heathbar : MonoBehaviour
     GameObject player;
     Image bar;
     public bool isForPlayerOne;
-    NewPlayerController2 controller2;
+    NewPlayerController controller2;
     NewPlayerController controller;
 
     // Start is called before the first frame update
@@ -24,7 +24,7 @@ public class Heathbar : MonoBehaviour
         }
         else { 
             player = GameObject.FindGameObjectWithTag("Player 2");
-            controller2 = player.GetComponent<NewPlayerController2>();
+            controller2 = player.GetComponent<NewPlayerController>();
         }
     }
 

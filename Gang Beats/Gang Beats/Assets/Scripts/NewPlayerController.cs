@@ -28,12 +28,24 @@ public class NewPlayerController : MonoBehaviour
     public Text nameLabel;
     public Image bar;
     public Image hpBar;
+
+    private void trackLoc()
+    {
+        Vector3 namePos = Camera.main.WorldToScreenPoint(this.transform.position);
+        Vector3 targetPos = new Vector3(namePos.x, namePos.y + 40, namePos.z);
+        nameLabel.transform.position = targetPos;
+        bar.transform.position = targetPos;
+        hpBar.fillAmount = (float)getHealth() / (float)maxHealth;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         health = maxHealth;
         attackCollider.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
+
+        trackLoc();
     }
 
 
@@ -42,11 +54,7 @@ public class NewPlayerController : MonoBehaviour
     {
 
 
-        Vector3 namePos = Camera.main.WorldToScreenPoint(this.transform.position);
-        Vector3 targetPos = new Vector3(namePos.x, namePos.y + 40, namePos.z);
-        nameLabel.transform.position = targetPos;
-        bar.transform.position = targetPos;
-        hpBar.fillAmount = (float)getHealth() / (float)maxHealth;
+        trackLoc();
 
         if (isDead)
         {
@@ -118,7 +126,7 @@ public class NewPlayerController : MonoBehaviour
         rb.velocity = new Vector2(moveHorizontal, rb.velocity.y);
     }
 
-    void Flip()
+    public void Flip()
     {
 
         facingRight = !facingRight;
