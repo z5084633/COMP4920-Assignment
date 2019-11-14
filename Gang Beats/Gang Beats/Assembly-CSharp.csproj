@@ -62,8 +62,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\GameGlobal.cs" />
     <Compile Include="Assets\GameLoader.cs" />
-    <Compile Include="Assets\ImageManager.cs" />
+    <Compile Include="Assets\GameManager.cs" />
+    <Compile Include="Assets\GameModel.cs" />
+    <Compile Include="Assets\Player.cs" />
+    <Compile Include="Assets\PlayerNameManager.cs" />
     <Compile Include="Assets\Scripts\bulletmovement.cs" />
     <Compile Include="Assets\Scripts\Heathbar.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />

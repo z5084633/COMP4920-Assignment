@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 1790577910653988992}
   - component: {fileID: 1790577910653988995}
   m_Layer: 0
-  m_Name: Player 1
+  m_Name: Player1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,6 +130,8 @@ MonoBehaviour:
   mainAnimator: {fileID: 1790577910653988995}
   jumpForce: 40000
   attackCollider: {fileID: 1790577908962607495}
+  playerOne: 0
+  maxHealth: 120
   groundCheck: {fileID: 1790577910009205218}
   checkRadius: 0.5
   whatIsGround:
