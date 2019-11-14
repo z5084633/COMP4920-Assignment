@@ -31,11 +31,15 @@ public class GameManager : MonoBehaviour
             //Summon players
             List<Player> players = gameModel.getPlayers();
             //player 1
-            loadInstance(players[0].getCharacter(), Vector3.zero, false).GetComponent<NewPlayerController>().playerOne = true;
+            NewPlayerController controller1 = loadInstance(players[0].getCharacter(), Vector3.zero, false).GetComponent<NewPlayerController>();
             //player 2
-            loadInstance(players[1].getCharacter(), Vector3.one, false);
+            NewPlayerController controller2 = loadInstance(players[1].getCharacter(), Vector3.one, false).GetComponent<NewPlayerController>();
+            
+            //Setting
 
-
+            controller1.playerOne = true;
+            controller1.setName(players[0].getName());
+            controller2.setName(players[1].getName());
         }
     }
 

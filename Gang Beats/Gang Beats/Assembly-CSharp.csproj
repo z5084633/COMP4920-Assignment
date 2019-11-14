@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\NewPlayerController2.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\SelectionManagerScript.cs" />
+    <Compile Include="Assets\UIFollowScript.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/ASUS/Desktop/cs4920/COMP4920-Assignment/Gang Beats/Gang Beats/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

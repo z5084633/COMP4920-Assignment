@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class NewPlayerController : MonoBehaviour
 {
 
@@ -25,7 +25,9 @@ public class NewPlayerController : MonoBehaviour
     public float checkRadius;
     public LayerMask whatIsGround;
 
-
+    public Text nameLabel;
+    public Image bar;
+    public Image hpBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,17 +36,24 @@ public class NewPlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+
     // Update is called once per frame
     void Update()
     {
+
+
+        Vector3 namePos = Camera.main.WorldToScreenPoint(this.transform.position);
+        Vector3 targetPos = new Vector3(namePos.x, namePos.y + 40, namePos.z);
+        nameLabel.transform.position = targetPos;
+        bar.transform.position = targetPos;
+        hpBar.fillAmount = (float)getHealth() / (float)maxHealth;
 
         if (isDead)
         {
             return;
         }
-
         ////////// key input start
-        
+
         if (playerOne)
         {
             moveHorizontal = Input.GetAxisRaw("Horizontal") * speed;
@@ -152,5 +161,8 @@ public class NewPlayerController : MonoBehaviour
     public int getHealth()
     {
         return health;
+    }
+    public void setName(string str) {
+        nameLabel.text = str;
     }
 }
