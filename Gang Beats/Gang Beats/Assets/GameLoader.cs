@@ -12,8 +12,8 @@ namespace Assets
         public GameLoader(){
             // All characters
             characterList =  new List<string>();
-            characterList.Add("PreFabs/Player0");
             characterList.Add("PreFabs/Player1");
+            characterList.Add("PreFabs/Player2");
         }
         public List<String> getCharacterList() {
             return this.characterList;

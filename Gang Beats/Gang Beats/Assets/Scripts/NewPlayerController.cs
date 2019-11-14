@@ -12,15 +12,15 @@ public class NewPlayerController : MonoBehaviour
     public bool playerOne;
 
     public int maxHealth = 120;
-    private int health;
+    public int health;
 
-    private Rigidbody2D rb;
-    private bool isDead = false;
-    private float moveHorizontal;
-    private bool facingRight = true;
-    
-    
-    private bool isGrounded = true;
+    protected Rigidbody2D rb;
+    protected bool isDead = false;
+    protected float moveHorizontal;
+    protected bool facingRight = true;
+
+
+    protected bool isGrounded = true;
     public Transform groundCheck;
     public float checkRadius;
     public LayerMask whatIsGround;
@@ -38,11 +38,13 @@ public class NewPlayerController : MonoBehaviour
     void Update()
     {
 
-        if (isDead) {
+        if (isDead)
+        {
             return;
         }
 
         ////////// key input start
+        
         if (playerOne)
         {
             moveHorizontal = Input.GetAxisRaw("Horizontal") * speed;
@@ -71,14 +73,20 @@ public class NewPlayerController : MonoBehaviour
             }
         }
 
+
+
         ///face player the right way
-        if (!facingRight && moveHorizontal > 0) {
+        if (!facingRight && moveHorizontal > 0)
+        {
             Flip();
-        } else if (facingRight && moveHorizontal < 0) {
+        }
+        else if (facingRight && moveHorizontal < 0)
+        {
             Flip();
-        }      
+        }
 
         ///moving animation
+
         if (moveHorizontal != 0)
         {
             mainAnimator.SetBool("moving", true);
@@ -92,7 +100,8 @@ public class NewPlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isDead) {
+        if (isDead)
+        {
             return;
         }
 
@@ -100,29 +109,34 @@ public class NewPlayerController : MonoBehaviour
         rb.velocity = new Vector2(moveHorizontal, rb.velocity.y);
     }
 
-    void Flip() {
+    void Flip()
+    {
 
         facingRight = !facingRight;
         Vector3 Scaler = transform.localScale;
         Scaler.x *= -1;
         transform.localScale = Scaler;
-    
+
     }
 
-    public void takeDamage(int amount) {
+    public void takeDamage(int amount)
+    {
 
         health -= amount;
-        if (health <= 0) {
+        if (health <= 0)
+        {
             killPlayer();
         }
     }
 
-    void killPlayer() {
+    void killPlayer()
+    {
         isDead = true;
         mainAnimator.SetBool("death", true);
     }
 
-    void Attack1Start() {
+    void Attack1Start()
+    {
 
         attackCollider.SetActive(true);
 

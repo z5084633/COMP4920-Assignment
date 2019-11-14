@@ -31,9 +31,9 @@ public class GameManager : MonoBehaviour
             //Summon players
             List<Player> players = gameModel.getPlayers();
             //player 1
-            loadInstance(players[0].getCharacter(), Vector3.zero, false);
+            loadInstance(players[0].getCharacter(), Vector3.zero, false).GetComponent<NewPlayerController>().playerOne = true;
             //player 2
-            loadInstance(players[0].getCharacter(), Vector3.one, false);
+            loadInstance(players[1].getCharacter(), Vector3.one, false);
 
 
         }
