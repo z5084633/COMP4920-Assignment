@@ -13,7 +13,9 @@ public class NewPlayerController2 : NewPlayerController
     // Start is called before the first frame update
     void Start()
     {
-        health = maxHealth;
+        playerHealth = GetComponent<PlayerHealth>();
+        playerHealth.setMaxHealth(120);
+        playerHealth.GameStart();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -24,6 +26,12 @@ public class NewPlayerController2 : NewPlayerController
 
         GameObject Spawnedbullet = Instantiate(bullet, bulletSpawnLoaction.transform.position, gameObject.transform.rotation);
 
+        if (playerOne) {
+            Spawnedbullet.GetComponent<bulletmovement>().isPlayerOne = true;
+        }
+        else {
+            Spawnedbullet.GetComponent<bulletmovement>().isPlayerOne = false;
+        }
 
         Spawnedbullet.GetComponent<Rigidbody2D>().velocity = Vector2.right * 10;
 

@@ -85,6 +85,7 @@ GameObject:
   - component: {fileID: 1790577908962607492}
   - component: {fileID: 1790577908962607493}
   - component: {fileID: 1966721452827335942}
+  - component: {fileID: 6576767488069658911}
   m_Layer: 0
   m_Name: Attack collider
   m_TagString: Attack
@@ -134,6 +135,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc9dbca2e6f6ca4e9c41029a862d4e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &6576767488069658911
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790577908962607495}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 7
 --- !u!1 &1790577910009205221
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,6 +200,7 @@ GameObject:
   - component: {fileID: 1790577910653988994}
   - component: {fileID: 1790577910653988992}
   - component: {fileID: 1790577910653988995}
+  - component: {fileID: 3228757150039721065}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -219,8 +242,6 @@ MonoBehaviour:
   jumpForce: 40000
   attackCollider: {fileID: 1790577908962607495}
   playerOne: 0
-  maxHealth: 120
-  health: 0
   groundCheck: {fileID: 1790577910009205218}
   checkRadius: 0.5
   whatIsGround:
@@ -335,6 +356,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3228757150039721065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790577910653988998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2a8c3a121b34d44b8ca3296e75467b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5801496347758460962
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,7 +536,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7100514178721015775
 RectTransform:
   m_ObjectHideFlags: 0

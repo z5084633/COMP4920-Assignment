@@ -9,8 +9,8 @@ public class Heathbar : MonoBehaviour
     GameObject player;
     Image bar;
     public bool isForPlayerOne;
-    NewPlayerController controller2;
-    NewPlayerController controller;
+    PlayerHealth Health2;
+    PlayerHealth Health1;
 
     // Start is called before the first frame update
     void Start()
@@ -20,11 +20,11 @@ public class Heathbar : MonoBehaviour
         if (isForPlayerOne)
         {
             player = GameObject.FindGameObjectWithTag("Player");
-            controller = player.GetComponent<NewPlayerController>();
+            Health1 = player.GetComponent<PlayerHealth>();
         }
         else { 
             player = GameObject.FindGameObjectWithTag("Player 2");
-            controller2 = player.GetComponent<NewPlayerController>();
+            Health2 = player.GetComponent<PlayerHealth>();
         }
     }
 
@@ -35,10 +35,10 @@ public class Heathbar : MonoBehaviour
 
         if (isForPlayerOne)
         {
-            bar.fillAmount = (float)controller.getHealth() / (float)controller.maxHealth;
+            bar.fillAmount = (float)Health1.getHealth() / (float)Health1.getMaxHealth();
         }
         else {
-            bar.fillAmount = (float)controller2.getHealth() / (float)controller2.maxHealth;
+            bar.fillAmount = (float)Health2.getHealth() / (float)Health2.getMaxHealth();
         }
 
     }

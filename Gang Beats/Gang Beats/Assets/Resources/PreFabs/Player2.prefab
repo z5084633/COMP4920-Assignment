@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 4365166840970000561}
   - component: {fileID: 4365166840970000562}
   - component: {fileID: 4365166840970000565}
+  - component: {fileID: 6632823177031161611}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player
@@ -266,8 +267,6 @@ MonoBehaviour:
   jumpForce: 10000
   attackCollider: {fileID: 0}
   playerOne: 0
-  maxHealth: 100
-  health: 0
   groundCheck: {fileID: 4365166840567019487}
   checkRadius: 0.4
   whatIsGround:
@@ -384,6 +383,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0.003952116, y: 0.006210357}
   m_Size: {x: 0.092737615, y: 0.20757928}
   m_Direction: 0
+--- !u!114 &6632823177031161611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4365166840970000558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2a8c3a121b34d44b8ca3296e75467b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4905838093003018885
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,7 +413,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1746712674758138382
 RectTransform:
   m_ObjectHideFlags: 0

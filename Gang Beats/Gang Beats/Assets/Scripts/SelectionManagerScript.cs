@@ -44,6 +44,7 @@ public class SelectionManagerScript : MonoBehaviour
     private List<GameObject> loadInstanceFromList(List<string> paths, Vector3 location, bool freeze = false) {
         List<GameObject> objList = new List<GameObject>();
         foreach (string path in paths) {
+
             objList.Add(loadInstance(path, location, freeze));
         }
         return objList;

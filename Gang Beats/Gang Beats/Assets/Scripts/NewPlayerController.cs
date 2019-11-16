@@ -11,8 +11,7 @@ public class NewPlayerController : MonoBehaviour
     public GameObject attackCollider;
     public bool playerOne;
 
-    public int maxHealth = 120;
-    public int health;
+    protected PlayerHealth playerHealth;
 
     protected Rigidbody2D rb;
     protected bool isDead = false;
@@ -35,17 +34,19 @@ public class NewPlayerController : MonoBehaviour
         Vector3 targetPos = new Vector3(namePos.x, namePos.y + 40, namePos.z);
         nameLabel.transform.position = targetPos;
         bar.transform.position = targetPos;
-        hpBar.fillAmount = (float)getHealth() / (float)maxHealth;
+        hpBar.fillAmount = (float)playerHealth.getHealth() / (float)playerHealth.getMaxHealth();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        health = maxHealth;
+        playerHealth = GetComponent<PlayerHealth>();
+        playerHealth.setMaxHealth(120);
+        playerHealth.GameStart();
+
         attackCollider.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
 
-        trackLoc();
     }
 
 
@@ -54,12 +55,17 @@ public class NewPlayerController : MonoBehaviour
     {
 
 
-        trackLoc();
+        //trackLoc(); // probably going to rather use the big health bars
 
         if (isDead)
         {
             return;
         }
+
+        if (playerHealth.getHealth() <= 0) {
+            killPlayer();
+        }
+
         ////////// key input start
 
         if (playerOne)
@@ -136,16 +142,9 @@ public class NewPlayerController : MonoBehaviour
 
     }
 
-    public void takeDamage(int amount)
-    {
-
-        health -= amount;
-        if (health <= 0)
-        {
-            killPlayer();
-        }
+    public int getHealth() {
+        return playerHealth.getHealth();
     }
-
     void killPlayer()
     {
         isDead = true;
@@ -164,11 +163,6 @@ public class NewPlayerController : MonoBehaviour
 
         attackCollider.SetActive(false);
 
-    }
-
-    public int getHealth()
-    {
-        return health;
     }
     public void setName(string str) {
         nameLabel.text = str;

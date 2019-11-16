@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
             controller1 = loadInstance(players[0].getCharacter(), Vector3.zero, false).GetComponent<NewPlayerController>();
             //player 2
             controller2 = loadInstance(players[1].getCharacter(), Vector3.one, false).GetComponent<NewPlayerController>();
+            controller2.tag = "Player 2";
             
             //Setting
 
