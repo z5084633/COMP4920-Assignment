@@ -195,12 +195,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1790577910653988997}
-  - component: {fileID: 1790577910653988996}
   - component: {fileID: 1790577910653988999}
   - component: {fileID: 1790577910653988994}
   - component: {fileID: 1790577910653988992}
   - component: {fileID: 1790577910653988995}
   - component: {fileID: 3228757150039721065}
+  - component: {fileID: 5405368017974297513}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -225,31 +225,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1790577910653988996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790577910653988998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cf9fbeb248a1ce43b12249aec1f9b6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  mainAnimator: {fileID: 1790577910653988995}
-  jumpForce: 40000
-  attackCollider: {fileID: 1790577908962607495}
-  playerOne: 0
-  groundCheck: {fileID: 1790577910009205218}
-  checkRadius: 0.5
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 256
-  nameLabel: {fileID: 5027872479843251914}
-  bar: {fileID: 4261092452999366506}
-  hpBar: {fileID: 5025986751829303957}
 --- !u!50 &1790577910653988999
 Rigidbody2D:
   serializedVersion: 4
@@ -368,6 +343,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a8c3a121b34d44b8ca3296e75467b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5405368017974297513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790577910653988998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4796c542f42cab4b8644cabb790df83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  mainAnimator: {fileID: 1790577910653988995}
+  jumpForce: 40000
+  playerOne: 0
+  groundCheck: {fileID: 1790577910009205218}
+  checkRadius: 0.5
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  nameLabel: {fileID: 5027872479843251914}
+  bar: {fileID: 4261092452999366506}
+  hpBar: {fileID: 5025986751829303957}
+  attackCollider: {fileID: 1790577908962607495}
 --- !u!1 &5801496347758460962
 GameObject:
   m_ObjectHideFlags: 0

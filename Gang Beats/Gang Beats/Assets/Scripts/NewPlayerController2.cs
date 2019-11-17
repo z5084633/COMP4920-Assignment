@@ -14,7 +14,7 @@ public class NewPlayerController2 : NewPlayerController
     void Start()
     {
         playerHealth = GetComponent<PlayerHealth>();
-        playerHealth.setMaxHealth(120);
+        playerHealth.setMaxHealth(100);
         playerHealth.GameStart();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -32,8 +32,6 @@ public class NewPlayerController2 : NewPlayerController
         else {
             Spawnedbullet.GetComponent<bulletmovement>().isPlayerOne = false;
         }
-
-        Spawnedbullet.GetComponent<Rigidbody2D>().velocity = Vector2.right * 10;
 
         if (gameObject.transform.localScale.x < 0)
         {

@@ -8,7 +8,7 @@ public class NewPlayerController : MonoBehaviour
     public float speed;
     public Animator mainAnimator;
     public float jumpForce = 20;
-    public GameObject attackCollider;
+    //public GameObject attackCollider;
     public bool playerOne;
 
     protected PlayerHealth playerHealth;
@@ -37,24 +37,12 @@ public class NewPlayerController : MonoBehaviour
         hpBar.fillAmount = (float)playerHealth.getHealth() / (float)playerHealth.getMaxHealth();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        playerHealth = GetComponent<PlayerHealth>();
-        playerHealth.setMaxHealth(120);
-        playerHealth.GameStart();
-
-        attackCollider.SetActive(false);
-        rb = GetComponent<Rigidbody2D>();
-
-    }
-
 
     // Update is called once per frame
     void Update()
     {
 
-
+        //Debug.Log(isGrounded);
         //trackLoc(); // probably going to rather use the big health bars
 
         if (isDead)
@@ -150,21 +138,9 @@ public class NewPlayerController : MonoBehaviour
         isDead = true;
         mainAnimator.SetBool("death", true);
     }
-
-    void Attack1Start()
-    {
-
-        attackCollider.SetActive(true);
-
-    }
-
-    void Attack1End()
-    {
-
-        attackCollider.SetActive(false);
-
-    }
     public void setName(string str) {
-        nameLabel.text = str;
+
+        //need to decide if we want the name here? probably best to do it somewhere else.
+        //nameLabel.text = str;
     }
 }

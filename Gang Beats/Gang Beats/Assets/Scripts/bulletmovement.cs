@@ -15,7 +15,7 @@ public class bulletmovement : MonoBehaviour
             
             if (other.tag == "Player 2")
             { 
-                other.GetComponent<PlayerHealth>().takeDamage(10);
+                other.GetComponent<PlayerHealth>().takeDamage(12);
                 GameObject.Destroy(this.gameObject);
             }
         }
@@ -23,7 +23,7 @@ public class bulletmovement : MonoBehaviour
 
             if (other.tag == "Player")
             {
-                other.GetComponent<PlayerHealth>().takeDamage(10);
+                other.GetComponent<PlayerHealth>().takeDamage(12);
                 GameObject.Destroy(this.gameObject);
             }
 
