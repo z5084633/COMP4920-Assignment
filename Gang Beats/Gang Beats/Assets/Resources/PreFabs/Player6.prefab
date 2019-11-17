@@ -219,7 +219,7 @@ MonoBehaviour:
   speed: 14
   mainAnimator: {fileID: 5907524302796653285}
   jumpForce: 14000
-  playerOne: 1
+  playerOne: 0
   groundCheck: {fileID: 5907524302510605569}
   checkRadius: 0.5
   whatIsGround:

@@ -15,6 +15,7 @@ namespace Assets
             characterList.Add("PreFabs/Player1");
             characterList.Add("PreFabs/Player2");
             characterList.Add("PreFabs/Player6");
+            characterList.Add("PreFabs/Player4");
         }
         public List<String> getCharacterList() {
             return this.characterList;

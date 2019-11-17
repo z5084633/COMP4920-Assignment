@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MinotaurAttack : MonoBehaviour
+public class MeleeAttack : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {

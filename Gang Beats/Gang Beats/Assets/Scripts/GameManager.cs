@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
             players = gameModel.getPlayers();
             //player 1
             controller1 = loadInstance(players[0].getCharacter(), Vector3.zero, false).GetComponent<NewPlayerController>();
+            controller1.tag = "Player";
             //player 2
             controller2 = loadInstance(players[1].getCharacter(), Vector3.one, false).GetComponent<NewPlayerController>();
             controller2.tag = "Player 2";
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour
             //Setting
 
             controller1.playerOne = true;
+            controller2.playerOne = false;
             controller2.Flip();
             controller1.setName(players[0].getName());
             controller2.setName(players[1].getName());
