@@ -78,7 +78,7 @@ public class SelectionManagerScript : MonoBehaviour
         player2Select.shiftCurrCharacter(shift);
     }
     public void onClickStart() {
-        GameGlobal.getInstance().setTest("Game start!");
+        GameGlobal.getInstance().setTest(player1Name.text + " VS " + player2Name.text);
         List<Player> players = new List<Player>();
         List<String> characterNames = gameLoader.getCharacterList();
         players.Add(new Player(player1Name.text, characterNames[player1Select.getCurrCharacter()]));
