@@ -2144,6 +2144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc925133df54f0e41b139ee84eee6659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 2086728063}
   player1Name: {fileID: 516413295}
   player2Name: {fileID: 1506882806}
 --- !u!1 &2118678846

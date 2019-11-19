@@ -9,9 +9,11 @@ class Player
 {
     private string name;
     private string character;
-    public Player(String name, String character) {
+    private string itemName;
+    public Player(String name, String character, string itemName) {
         this.name = name;
         this.character = character;
+        this.itemName = itemName;
     }
     public String getName() {
         return name;
@@ -19,5 +21,9 @@ class Player
     public String getCharacter()
     {
         return character;
+    }
+    public String getItemName()
+    {
+        return itemName;
     }
 }

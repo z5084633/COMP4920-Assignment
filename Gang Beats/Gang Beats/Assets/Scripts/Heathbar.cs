@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Heathbar : MonoBehaviour
 {
-
+    /*
     GameObject player;
     Image bar;
     public bool isForPlayerOne;
@@ -42,4 +42,5 @@ public class Heathbar : MonoBehaviour
         }
 
     }
+    */
 }

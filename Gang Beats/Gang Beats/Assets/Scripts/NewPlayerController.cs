@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class NewPlayerController : MonoBehaviour
 {
 
@@ -29,8 +31,15 @@ public class NewPlayerController : MonoBehaviour
     public Image bar;
     public Image hpBar;
 
+
+    private List<Buff> buffs = null;
+
+    public List<Buff> getBuffs() {
+        return this.buffs;
+    }
     private void trackLoc()
     {
+
         Vector3 namePos = Camera.main.WorldToScreenPoint(this.transform.position);
         Vector3 targetPos = new Vector3(namePos.x, namePos.y + 40, namePos.z);
         nameLabel.transform.position = targetPos;
@@ -41,14 +50,59 @@ public class NewPlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        buffs = new List<Buff>();
+
         health = maxHealth;
         attackCollider.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
 
         trackLoc();
     }
+    public void addHp(int n) {
+        this.health += n;
+        if (this.health > this.maxHealth)
+        {
+            this.health = this.maxHealth;
+        }
+    }
+    private string item;
+    public void setItem(string item) {
+        this.item = item;
+    }
+    public void addBuff(Buff buff) {
+        this.buffs.Add(buff);
+    }
+    private void useItem() {
+        Debug.Log("Use Item!");
+        if (item == null) {
+            return;
+        }
+        Debug.Log(item);
 
+        switch (item) {
+            case "PreFabs/Items/RedPotion":
+                // 40 Hp
+                addHp(40);
+                break;
+            case "PreFabs/Items/YellowPotion":
+                // Shield
+                addBuff(new BuffShield(this, DateTime.Now).buffStart());
+                break;
+            case "PreFabs/Items/BluePotion":
+                // Speed up
+                addBuff(new BuffSpeedUp(this, DateTime.Now).buffStart());
+                break;
+            case "PreFabs/Items/GreenPotion":
+                // Hot
+                addBuff(new BuffCure(this, DateTime.Now).buffStart());
+                break;
+        }
 
+        item = null;
+    }
+    public void Log(String str) {
+        Debug.Log(str);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -74,7 +128,10 @@ public class NewPlayerController : MonoBehaviour
             {
                 mainAnimator.SetTrigger("attack");
             }
-
+            // Use Item
+            if (Input.GetKeyDown(KeyCode.E)) {
+                useItem();
+            }
         }
         else
         {
@@ -87,6 +144,19 @@ public class NewPlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 mainAnimator.SetTrigger("attack");
+            }
+            // Use Item
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                useItem();
+            }
+        }
+        if (this.buffs != null)
+        {
+            DateTime currTime = DateTime.Now;
+            foreach (Buff buff in this.buffs)
+            {
+                buff.update(currTime);
             }
         }
 
@@ -135,10 +205,12 @@ public class NewPlayerController : MonoBehaviour
         transform.localScale = Scaler;
 
     }
-
+    public int shieled = 0;
     public void takeDamage(int amount)
     {
-
+        if (this.shieled != 0) {
+            amount = amount / 3;
+        }
         health -= amount;
         if (health <= 0)
         {

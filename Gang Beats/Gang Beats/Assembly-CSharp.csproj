@@ -62,6 +62,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Buff.cs" />
+    <Compile Include="Assets\BuffCure.cs" />
+    <Compile Include="Assets\BuffShield.cs" />
+    <Compile Include="Assets\BuffSpeedUp.cs" />
     <Compile Include="Assets\GameGlobal.cs" />
     <Compile Include="Assets\GameLoader.cs" />
     <Compile Include="Assets\GameManager.cs" />

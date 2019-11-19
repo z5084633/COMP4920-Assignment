@@ -39,9 +39,11 @@ public class GameManager : MonoBehaviour
             players = gameModel.getPlayers();
             //player 1
             controller1 = loadInstance(players[0].getCharacter(), Vector3.zero, false).GetComponent<NewPlayerController>();
+            controller1.setItem(players[0].getItemName());
             //player 2
             controller2 = loadInstance(players[1].getCharacter(), Vector3.one, false).GetComponent<NewPlayerController>();
-            
+            controller2.setItem(players[1].getItemName());
+
             //Setting
 
             controller1.playerOne = true;

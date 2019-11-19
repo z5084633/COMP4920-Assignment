@@ -10,6 +10,8 @@ using UnityEngine.SceneManagement;
 public class CharacterSelector {
     private List<GameObject> characterList;
     private int currCharacter;
+
+
     public CharacterSelector(List<GameObject> characterList) {
         this.characterList = characterList;
         foreach (GameObject obj in this.characterList) {
@@ -27,7 +29,36 @@ public class CharacterSelector {
         return currCharacter;
     }
 }
+public class ItemsSelector
+{
+    private List<GameObject> itemsList;
+    private int currItem;
 
+
+    public ItemsSelector(List<GameObject> itemsList, int x, int y)
+    {
+        int i = 0;
+        this.itemsList = itemsList;
+        foreach (GameObject obj in this.itemsList)
+        {
+            int t = i;
+            Button currButton = obj.GetComponent<Button>();
+            currButton.onClick.AddListener(delegate ()
+            {
+                setCurrItem(t);
+            });
+            obj.transform.SetParent(GameObject.Find("Canvas").gameObject.transform);
+            obj.transform.localPosition = new Vector3(x + 50 * i, y, 0);
+            i++;
+        }
+    }
+    public void setCurrItem(int i) {
+        this.currItem = i;
+    }
+    public int getCurrItem() {
+        return this.currItem;
+    }
+}
 public class SelectionManagerScript : MonoBehaviour
 {
 
@@ -57,12 +88,23 @@ public class SelectionManagerScript : MonoBehaviour
     CharacterSelector player1Select;
     CharacterSelector player2Select;
 
+    ItemsSelector player1ItemsSelect;
+    ItemsSelector player2ItemsSelect;
     // Start is called before the first frame update
     void Start()
     {
         gameLoader = new GameLoader();
         player1Select = new CharacterSelector(loadInstanceFromList(gameLoader.getCharacterList(), new Vector3(-6, 0, 0), true));
         player2Select = new CharacterSelector(loadInstanceFromList(gameLoader.getCharacterList(), new Vector3(6, 0, 0), true));
+
+        player1ItemsSelect = new ItemsSelector(
+            loadInstanceFromList(gameLoader.getItemsList(), new Vector3(-6, 0, 0), false), 
+            -400,
+            -150);
+        player2ItemsSelect = new ItemsSelector(
+            loadInstanceFromList(gameLoader.getItemsList(), new Vector3(6, 0, 0), false), 
+            200, 
+            -150);
         // Set up default name
         player1Name.SetTextWithoutNotify("Player1");
         player2Name.SetTextWithoutNotify("Player2");
@@ -80,8 +122,19 @@ public class SelectionManagerScript : MonoBehaviour
         GameGlobal.getInstance().setTest("Game start!");
         List<Player> players = new List<Player>();
         List<String> characterNames = gameLoader.getCharacterList();
-        players.Add(new Player(player1Name.text, characterNames[player1Select.getCurrCharacter()]));
-        players.Add(new Player(player2Name.text, characterNames[player2Select.getCurrCharacter()]));
+        List<String> itemsNames = gameLoader.getItemsList();
+        players.Add(new Player(
+            player1Name.text, 
+            characterNames[player1Select.getCurrCharacter()],
+            itemsNames[player1ItemsSelect.getCurrItem()]
+            ));
+        players.Add(new Player(
+            player2Name.text, 
+            characterNames[player2Select.getCurrCharacter()],
+            itemsNames[player2ItemsSelect.getCurrItem()]
+            ));
+        Debug.Log(itemsNames[player1ItemsSelect.getCurrItem()]);
+
         GameGlobal.getInstance().setGameModel(gameLoader.createGame(players));
         SceneManager.LoadScene(1);
     }
