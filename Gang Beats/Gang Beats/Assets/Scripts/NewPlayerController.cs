@@ -37,6 +37,11 @@ public class NewPlayerController : MonoBehaviour
         hpBar.fillAmount = (float)playerHealth.getHealth() / (float)playerHealth.getMaxHealth();
     }
 
+    private void Start()
+    {
+        playerHealth = GetComponent<PlayerHealth>();
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -133,8 +138,16 @@ public class NewPlayerController : MonoBehaviour
     public int getHealth() {
         return playerHealth.getHealth();
     }
+
+    public bool IsDead() {
+
+        return isDead;
+    }
+
     void killPlayer()
     {
+        GetComponent<CapsuleCollider2D>().enabled = false;
+        rb.gravityScale = 0;
         isDead = true;
         mainAnimator.SetBool("death", true);
     }

@@ -198,9 +198,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54f83adfeabe78349a41ae4329428128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  speed: 10
   mainAnimator: {fileID: 6528070226950667901}
-  jumpForce: 16000
+  jumpForce: 13000
   playerOne: 0
   groundCheck: {fileID: 6528070225852671220}
   checkRadius: 0.5

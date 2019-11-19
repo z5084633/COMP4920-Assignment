@@ -57,14 +57,14 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        if (controller1.getHealth() < 0)
+        if (controller1 != null && controller1.IsDead())
         {
             panel.SetActive(true);
-            winnerText.text = players[1].getName() + " win!";
+            winnerText.text = players[1].getName() + " WINS";
         }
-        else if (controller2.getHealth() < 0) {
+        else if (controller2 != null && controller2.IsDead()) {
             panel.SetActive(true);
-            winnerText.text = players[0].getName() + " win!";
+            winnerText.text = players[0].getName() + " WINS";
         }
     }
 

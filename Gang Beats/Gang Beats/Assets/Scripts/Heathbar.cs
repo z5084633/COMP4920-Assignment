@@ -20,11 +20,16 @@ public class Heathbar : MonoBehaviour
         if (isForPlayerOne)
         {
             player = GameObject.FindGameObjectWithTag("Player");
-            Health1 = player.GetComponent<PlayerHealth>();
+            if (player != null) { 
+                Health1 = player.GetComponent<PlayerHealth>();
+            }
         }
         else { 
             player = GameObject.FindGameObjectWithTag("Player 2");
-            Health2 = player.GetComponent<PlayerHealth>();
+
+            if (player != null) { 
+                Health2 = player.GetComponent<PlayerHealth>();
+            }
         }
     }
 
@@ -35,9 +40,20 @@ public class Heathbar : MonoBehaviour
 
         if (isForPlayerOne)
         {
+            if (Health1 == null) {
+                //Debug.Log("Health bar error");
+                return;
+            }
             bar.fillAmount = (float)Health1.getHealth() / (float)Health1.getMaxHealth();
         }
         else {
+
+            if (Health2 == null)
+            {
+                //Debug.Log("Health bar error 2");
+                return;
+            }
+
             bar.fillAmount = (float)Health2.getHealth() / (float)Health2.getMaxHealth();
         }
 
