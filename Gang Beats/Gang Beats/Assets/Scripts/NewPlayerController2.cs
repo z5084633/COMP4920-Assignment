@@ -7,7 +7,7 @@ public class NewPlayerController2 : NewPlayerController
 
     public GameObject bullet;
     public GameObject bulletSpawnLoaction;
-
+    public AudioClip shoot;
 
 
     // Start is called before the first frame update
@@ -24,7 +24,10 @@ public class NewPlayerController2 : NewPlayerController
     void Attack1Start()
     {
 
+        AudioSource.PlayClipAtPoint(shoot,new Vector3 (0,0,0), 0.5f);
+
         GameObject Spawnedbullet = Instantiate(bullet, bulletSpawnLoaction.transform.position, gameObject.transform.rotation);
+       
 
         if (playerOne) {
             Spawnedbullet.GetComponent<bulletmovement>().isPlayerOne = true;

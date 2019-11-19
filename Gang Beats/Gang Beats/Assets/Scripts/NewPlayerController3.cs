@@ -8,6 +8,7 @@ public class NewPlayerController3 : NewPlayerController
 
     public GameObject fireBallSpawn;
     public GameObject fireBall;
+    public AudioClip shoot;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class NewPlayerController3 : NewPlayerController
 
     void Attack1Start()
     {
+        AudioSource.PlayClipAtPoint(shoot, new Vector3(0, 0, 0));
 
         GameObject SpawnedFireBall = Instantiate(fireBall, fireBallSpawn.transform.position, gameObject.transform.rotation);
 

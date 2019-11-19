@@ -276,6 +276,7 @@ MonoBehaviour:
   hpBar: {fileID: 2628756720845490496}
   bullet: {fileID: 7825324509760365758, guid: 20d3f9df017b3334abe7130725ae2e4c, type: 3}
   bulletSpawnLoaction: {fileID: 4365166840249293717}
+  shoot: {fileID: 8300000, guid: e95566b65ac9f104bac31c39fcd5c732, type: 3}
 --- !u!212 &4365166840970000560
 SpriteRenderer:
   m_ObjectHideFlags: 0
