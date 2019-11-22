@@ -24,7 +24,7 @@ public class NewPlayerController2 : NewPlayerController
     void Attack1Start()
     {
 
-        AudioSource.PlayClipAtPoint(shoot,new Vector3 (0,0,0), 0.5f);
+        AudioSource.PlayClipAtPoint(shoot,new Vector3 (0,0,0), 0.8f);
 
         GameObject Spawnedbullet = Instantiate(bullet, bulletSpawnLoaction.transform.position, gameObject.transform.rotation);
        

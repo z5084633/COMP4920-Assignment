@@ -274,6 +274,7 @@ MonoBehaviour:
   nameLabel: {fileID: 7136901861781705512}
   bar: {fileID: 8181244640677433779}
   hpBar: {fileID: 2628756720845490496}
+  JumpSound: {fileID: 8300000, guid: 8bc14bd73d8bf9b49a9bbbd3da087f6b, type: 3}
   bullet: {fileID: 7825324509760365758, guid: 20d3f9df017b3334abe7130725ae2e4c, type: 3}
   bulletSpawnLoaction: {fileID: 4365166840249293717}
   shoot: {fileID: 8300000, guid: e95566b65ac9f104bac31c39fcd5c732, type: 3}

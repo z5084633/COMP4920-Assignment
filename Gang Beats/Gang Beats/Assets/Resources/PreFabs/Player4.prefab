@@ -210,7 +210,9 @@ MonoBehaviour:
   nameLabel: {fileID: 0}
   bar: {fileID: 0}
   hpBar: {fileID: 0}
+  JumpSound: {fileID: 8300000, guid: 8bc14bd73d8bf9b49a9bbbd3da087f6b, type: 3}
   attackCollider: {fileID: 6528070227959605225}
+  axeSwing: {fileID: 8300000, guid: fcc5587d3cfd830478c21ff425ffb570, type: 3}
 --- !u!1 &6528070227959605225
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,3 +305,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc9dbca2e6f6ca4e9c41029a862d4e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meleeHit: {fileID: 8300000, guid: 6f3053f54311a374da066a2db49c54c7, type: 3}

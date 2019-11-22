@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MeleeAttack : MonoBehaviour
 {
+
+    public AudioClip meleeHit;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -13,7 +16,7 @@ public class MeleeAttack : MonoBehaviour
 
             if (collision.tag == "Player 2")
             {
-
+                AudioSource.PlayClipAtPoint(meleeHit, new Vector3(0,0,0), 0.8f);
                 collision.GetComponent<PlayerHealth>().takeDamage(20);
             }
 
@@ -21,7 +24,7 @@ public class MeleeAttack : MonoBehaviour
 
             if (collision.tag == "Player")
             {
-
+                AudioSource.PlayClipAtPoint(meleeHit, new Vector3(0, 0, 0), 0.8f);
                 collision.GetComponent<PlayerHealth>().takeDamage(20);
             }
 

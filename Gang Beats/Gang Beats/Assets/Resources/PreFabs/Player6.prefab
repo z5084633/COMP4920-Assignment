@@ -228,10 +228,11 @@ MonoBehaviour:
   nameLabel: {fileID: 0}
   bar: {fileID: 0}
   hpBar: {fileID: 0}
+  JumpSound: {fileID: 8300000, guid: 8bc14bd73d8bf9b49a9bbbd3da087f6b, type: 3}
   fireBallSpawn: {fileID: 5907524302454932624}
   fireBall: {fileID: 4808988913845654180, guid: 96027cd7860e7e6488aea386da598da9,
     type: 3}
-  shoot: {fileID: 8300000, guid: fb966f1c233533648970ee201c1a914d, type: 3}
+  shoot: {fileID: 8300000, guid: 5d584b2cea2b88c45b68b4e27c318592, type: 3}
 --- !u!114 &5907524302796653283
 MonoBehaviour:
   m_ObjectHideFlags: 0

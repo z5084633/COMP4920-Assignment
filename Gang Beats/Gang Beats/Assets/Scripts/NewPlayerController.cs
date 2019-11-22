@@ -28,6 +28,8 @@ public class NewPlayerController : MonoBehaviour
     public Image bar;
     public Image hpBar;
 
+    public AudioClip JumpSound;
+
     private void trackLoc()
     {
         Vector3 namePos = Camera.main.WorldToScreenPoint(this.transform.position);
@@ -67,6 +69,7 @@ public class NewPlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.W) && isGrounded)
             {
                 rb.AddForce(Vector2.up * jumpForce);
+                PlayJumpSound();
             }
 
             if (Input.GetKeyDown(KeyCode.S))
@@ -81,6 +84,7 @@ public class NewPlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
             {
                 rb.AddForce(Vector2.up * jumpForce);
+                PlayJumpSound();
             }
 
             if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -124,6 +128,12 @@ public class NewPlayerController : MonoBehaviour
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
         rb.velocity = new Vector2(moveHorizontal, rb.velocity.y);
+    }
+
+    public virtual void PlayJumpSound() {
+
+        AudioSource.PlayClipAtPoint(JumpSound, new Vector3());
+
     }
 
     public void Flip()
