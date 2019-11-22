@@ -9,6 +9,7 @@ namespace Assets
     class GameLoader
     {
         private List<String> characterList;
+        private List<String> itemsList;
         public GameLoader(){
             // All characters
             characterList =  new List<string>();
@@ -16,9 +17,20 @@ namespace Assets
             characterList.Add("PreFabs/Player2");
             characterList.Add("PreFabs/Player6");
             characterList.Add("PreFabs/Player4");
+            // All items
+            itemsList = new List<string>();
+            itemsList.Add("PreFabs/Items/RedPotion");
+            itemsList.Add("PreFabs/Items/YellowPotion");
+            itemsList.Add("PreFabs/Items/BluePotion");
+            itemsList.Add("PreFabs/Items/GreenPotion");
         }
         public List<String> getCharacterList() {
             return this.characterList;
+        }
+
+        public List<String> getItemsList()
+        {
+            return this.itemsList;
         }
         /* 
          * Return a new game
@@ -30,6 +42,8 @@ namespace Assets
 
             return gameModel;
         }
+
+
 
     }
 }

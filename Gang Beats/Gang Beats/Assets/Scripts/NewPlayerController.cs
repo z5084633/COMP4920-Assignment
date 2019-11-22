@@ -1,7 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+
 public class NewPlayerController : MonoBehaviour
 {
 
@@ -29,7 +32,12 @@ public class NewPlayerController : MonoBehaviour
     public Image hpBar;
 
     public AudioClip JumpSound;
+    
+    private List<Buff> buffs = null;
 
+    public List<Buff> getBuffs() {
+        return this.buffs;
+    }
     private void trackLoc()
     {
         Vector3 namePos = Camera.main.WorldToScreenPoint(this.transform.position);
@@ -41,10 +49,54 @@ public class NewPlayerController : MonoBehaviour
 
     private void Start()
     {
+        if (this.buffs == null){
+            this.buffs = new List<Buff>();
+        }
         playerHealth = GetComponent<PlayerHealth>();
         rb = GetComponent<Rigidbody2D>();
     }
 
+    private string item;
+    public void setItem(string item) {
+        this.item = item;
+    }
+    public void addBuff(Buff buff) {
+        if (this.buffs == null){
+            this.buffs = new List<Buff>();
+        }
+        this.buffs.Add(buff);
+    }
+    private void useItem() {
+        Debug.Log("Use Item!");
+        if (item == null) {
+            return;
+        }
+        Debug.Log(item);
+
+        switch (item) {
+            case "PreFabs/Items/RedPotion":
+                // 40 Hp
+                addHp(40);
+                break;
+            case "PreFabs/Items/YellowPotion":
+                // Shield
+                addBuff(new BuffShield(this, DateTime.Now).buffStart());
+                break;
+            case "PreFabs/Items/BluePotion":
+                // Speed up
+                addBuff(new BuffSpeedUp(this, DateTime.Now).buffStart());
+                break;
+            case "PreFabs/Items/GreenPotion":
+                // Hot
+                addBuff(new BuffCure(this, DateTime.Now).buffStart());
+                break;
+        }
+
+        item = null;
+    }
+    public void Log(String str) {
+        Debug.Log(str);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -76,6 +128,11 @@ public class NewPlayerController : MonoBehaviour
             {
                 mainAnimator.SetTrigger("attack");
             }
+            
+            // Use Item
+            if (Input.GetKeyDown(KeyCode.E)) {
+                useItem();
+            }
 
         }
         else
@@ -91,10 +148,25 @@ public class NewPlayerController : MonoBehaviour
             {
                 mainAnimator.SetTrigger("attack");
             }
+            
+                        // Use Item
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                useItem();
+            }
         }
 
 
-
+        if (this.buffs != null)
+        {
+            DateTime currTime = DateTime.Now;
+            foreach (Buff buff in this.buffs)
+            {
+                buff.update(currTime);
+            }
+        }
+        
+        
         ///face player the right way
         if (!facingRight && moveHorizontal > 0)
         {
@@ -135,7 +207,19 @@ public class NewPlayerController : MonoBehaviour
         AudioSource.PlayClipAtPoint(JumpSound, new Vector3());
 
     }
-
+    public int shieled = 0;
+    public void takeDamage(int amount)
+    {
+        if (this.shieled != 0) {
+            amount = amount / 3;
+        }
+    }
+    public void addHp(int amount){
+        //
+    }
+    public int getHp(){
+        return 100;
+    }
     public void Flip()
     {
 
