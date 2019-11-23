@@ -384,25 +384,25 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: a4510000
-      m_LastClickedID: 20900
-      m_ExpandedIDs: 30e5ffffd2e5ffff84e6ffff60e7ffff16ebffff82ebffffeeefffff68fbffff163b0000843b0000b03b000048450000b84500005449000070490000e04900001a4a00000851000078510000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 6ccdffff20d0ffff74d3ffffc0deffff36dfffff76e0ffff3ae1ffffaee2ffff42e3ffffdee3fffff8f3ffff0ef8ffff1ef9ffff68fbffff1e3b00008e3b0000ba3b0000823e0000e641000014420000ce460000fc4600004251000070510000ba51000082530000f25300001e540000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Canvas
-        m_OriginalName: Canvas
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 17736
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 8}
+        m_ClientGUIView: {fileID: 0}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -446,9 +446,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 693.1325, y: 303.48056, z: -264.8913}
+    m_Target: {x: 639.4106, y: 455.17673, z: -76.41096}
     speed: 2
-    m_Value: {x: 693.1325, y: 303.48056, z: -264.8913}
+    m_Value: {x: 639.4106, y: 455.17673, z: -76.41096}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -481,9 +481,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1096.0557
+    m_Target: 1220.2642
     speed: 2
-    m_Value: 1096.0557
+    m_Value: 1220.2642
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -718,11 +718,11 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Resources/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Resources/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/eamongray/Unity_project/Gang_git/COMP4920-Assignment/Gang
     Beats/Gang Beats
@@ -730,9 +730,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 68300000
-    m_LastClickedID: 12392
-    m_ExpandedIDs: 000000008c2d0000aa2e00005e3600007e360000
+    m_SelectedIDs: 2c3a0000
+    m_LastClickedID: 14892
+    m_ExpandedIDs: 00000000902d0000ae2e00006236000082360000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -760,7 +760,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000008c2d0000aa2e00005e3600007e360000
+    m_ExpandedIDs: 00000000902d0000ae2e00006236000082360000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -812,7 +812,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 65}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 208
@@ -879,4 +879,4 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 397
+  m_LastVerticalScrollValue: 0
