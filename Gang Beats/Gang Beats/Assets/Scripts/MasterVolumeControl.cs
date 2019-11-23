@@ -19,7 +19,7 @@ public class MasterVolumeControl : MonoBehaviour
     public void SetVolume(float vol)
     {
         masterVolume = vol;
-        Debug.Log(vol);
+        //Debug.Log(vol);
     }
 
 }
