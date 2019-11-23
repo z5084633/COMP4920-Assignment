@@ -11,6 +11,7 @@ public class VolumChange : MonoBehaviour
     // Music volume variable that will be modified
     // by dragging slider knob
     private float musicVolume = 1f;
+    //private float masterVolume = 1.0f;
 
     // Use this for initialization
     void Start()
@@ -26,11 +27,14 @@ public class VolumChange : MonoBehaviour
 
         // Setting volume option of Audio Source to be equal to musicVolume
         audioSrc.volume = musicVolume;
+        //AudioListener.volume = musicVolume;
     }
 
 
     public void SetVolume(float vol)
     {
         musicVolume = vol;
+        //masterVolume = vol;
+
     }
 }
