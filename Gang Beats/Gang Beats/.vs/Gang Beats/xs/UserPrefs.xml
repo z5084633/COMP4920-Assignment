@@ -1,9 +1,5 @@
 ﻿<Properties StartupConfiguration="{3827DEE4-70F2-29D3-BE71-68BD89005EC9}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MasterVolumeControl.cs">
-    <Files>
-      <File FileName="Assets/Scripts/VolumChange.cs" Line="35" Column="6" />
-      <File FileName="Assets/Scripts/MasterVolumeControl.cs" Line="21" Column="6" NotebookId="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
