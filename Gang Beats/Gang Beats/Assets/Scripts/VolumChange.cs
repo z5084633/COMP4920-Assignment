@@ -28,9 +28,7 @@ public class VolumChange : MonoBehaviour
         audioSrc.volume = musicVolume;
     }
 
-    // Method that is called by slider game object
-    // This method takes vol value passed by slider
-    // and sets it as musicValue
+
     public void SetVolume(float vol)
     {
         musicVolume = vol;

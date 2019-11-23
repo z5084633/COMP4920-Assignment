@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\GameModel.cs" />
     <Compile Include="Assets\Scripts\Heathbar.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\MasterVolumeControl.cs" />
     <Compile Include="Assets\Scripts\MeleeAttack.cs" />
     <Compile Include="Assets\Scripts\NewPlayerController.cs" />
     <Compile Include="Assets\Scripts\NewPlayerController1.cs" />
