@@ -29,13 +29,16 @@ public class CharacterSelector {
 }
 public class ItemsSelector
 {
+    GameObject itemSelector;
     private List<GameObject> itemsList;
     private int currItem;
 
 
-    public ItemsSelector(List<GameObject> itemsList, int x, int y)
+    public ItemsSelector(List<GameObject> itemsList, GameObject itemSelector, int x, int y)
     {
         int i = 0;
+        this.itemSelector = itemSelector;
+        this.itemSelector.transform.SetParent(GameObject.Find("Canvas").gameObject.transform);
         this.itemsList = itemsList;
         foreach (GameObject obj in this.itemsList)
         {
@@ -49,8 +52,12 @@ public class ItemsSelector
             obj.transform.localPosition = new Vector3(x + 50 * i, y, 0);
             i++;
         }
+        setCurrItem(0);
+
+
     }
     public void setCurrItem(int i) {
+        itemSelector.transform.localPosition = itemsList[i].transform.localPosition;
         this.currItem = i;
     }
     public int getCurrItem() {
@@ -95,11 +102,13 @@ public class SelectionManagerScript : MonoBehaviour
         player1Select = new CharacterSelector(loadInstanceFromList(gameLoader.getCharacterList(), new Vector3(-6, 0, 0), true));
         player2Select = new CharacterSelector(loadInstanceFromList(gameLoader.getCharacterList(), new Vector3(6, 0, 0), true));
         player1ItemsSelect = new ItemsSelector(
-            loadInstanceFromList(gameLoader.getItemsList(), new Vector3(-6, 0, 0), false), 
+            loadInstanceFromList(gameLoader.getItemsList(), new Vector3(-6, 0, 0), false),
+            loadInstance(gameLoader.getItemSelectIndicator(), new Vector3(0, 0, 0)),
             -400,
             -150);
         player2ItemsSelect = new ItemsSelector(
-            loadInstanceFromList(gameLoader.getItemsList(), new Vector3(6, 0, 0), false), 
+            loadInstanceFromList(gameLoader.getItemsList(), new Vector3(6, 0, 0), false),
+            loadInstance(gameLoader.getItemSelectIndicator(), new Vector3(0, 0, 0)),
             200, 
             -150);
         // Set up default name
