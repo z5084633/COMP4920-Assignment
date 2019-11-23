@@ -71,7 +71,7 @@ public class NewPlayerController : MonoBehaviour
         if (item == null) {
             return;
         }
-        Debug.Log(item);
+        Debug.Log("ITEM = " + item);
 
         switch (item) {
             case "PreFabs/Items/RedPotion":
@@ -215,11 +215,11 @@ public class NewPlayerController : MonoBehaviour
         }
     }
     public void addHp(int amount){
-        //
+        playerHealth.addHealth(amount);
     }
-    public int getHp(){
-        return 100;
-    }
+/*    public int getHp(){
+        return playerHealth.getHealth();
+    }*/
     public void Flip()
     {
 
