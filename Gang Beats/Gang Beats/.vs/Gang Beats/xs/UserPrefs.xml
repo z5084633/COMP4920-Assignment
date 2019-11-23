@@ -1,17 +1,21 @@
 ﻿<Properties StartupConfiguration="{3827DEE4-70F2-29D3-BE71-68BD89005EC9}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MasterVolumeControl.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/Scenes/PauseScript.cs">
     <Files>
       <File FileName="Assets/Scripts/VolumChange.cs" Line="31" Column="1" />
       <File FileName="Assets/Scripts/MasterVolumeControl.cs" Line="5" Column="26" />
+      <File FileName="Assets/Resources/Scenes/PauseScript.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Gang Beats" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="MasterVolumeControl.cs" selected="True" />
+              <Node name="Resources" expanded="True">
+                <Node name="Scenes" expanded="True">
+                  <Node name="PauseScript.cs" selected="True" />
+                </Node>
               </Node>
+              <Node name="Scripts" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -20,7 +24,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="43571428-6537-4a8f-b583-e8b191dfcaeb" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ad1233cb-3a25-4867-a1f1-6d57bca2a7ca" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
