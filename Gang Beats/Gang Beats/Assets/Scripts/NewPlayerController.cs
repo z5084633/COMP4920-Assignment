@@ -150,7 +150,7 @@ public class NewPlayerController : MonoBehaviour
             }
             
                         // Use Item
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.L))
             {
                 useItem();
             }

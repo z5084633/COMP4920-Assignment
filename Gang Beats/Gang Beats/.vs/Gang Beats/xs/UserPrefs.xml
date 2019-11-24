@@ -1,15 +1,13 @@
 ﻿<Properties StartupConfiguration="{3827DEE4-70F2-29D3-BE71-68BD89005EC9}|">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/NewPlayerController.cs">
+    <Files>
+      <File FileName="Assets/Scripts/GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/NewPlayerController.cs" Line="4" Column="12" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Gang Beats" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="MasterVolumeControl.cs" selected="True" />
-              </Node>
-            </Node>
-          </Node>
+          <Node name="Gang Beats" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
