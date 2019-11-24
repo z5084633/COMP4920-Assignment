@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   mainAnimator: {fileID: 6528070226950667901}
-  jumpForce: 13000
+  jumpForce: 16000
   playerOne: 0
   groundCheck: {fileID: 6528070225852671220}
   checkRadius: 0.5
@@ -211,6 +211,7 @@ MonoBehaviour:
   bar: {fileID: 0}
   hpBar: {fileID: 0}
   JumpSound: {fileID: 8300000, guid: 8bc14bd73d8bf9b49a9bbbd3da087f6b, type: 3}
+  shieled: 0
   attackCollider: {fileID: 6528070227959605225}
   axeSwing: {fileID: 8300000, guid: fcc5587d3cfd830478c21ff425ffb570, type: 3}
 --- !u!1 &6528070227959605225

@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     public Text testLog;
     public Text winnerText;
     public GameObject panel;
+
+    public GameObject StartOne;
+    public GameObject StartTwo;
     #endregion
     private GameObject loadInstance(string path, Vector3 location, bool freeze = false)
     {
@@ -38,11 +41,11 @@ public class GameManager : MonoBehaviour
             //Summon players
             players = gameModel.getPlayers();
             //player 1
-            controller1 = loadInstance(players[0].getCharacter(), Vector3.zero, false).GetComponent<NewPlayerController>();
+            controller1 = loadInstance(players[0].getCharacter(), StartOne.transform.position, false).GetComponent<NewPlayerController>();
             controller1.setItem(players[0].getItemName());
             controller1.tag = "Player";
             //player 2
-            controller2 = loadInstance(players[1].getCharacter(), Vector3.one, false).GetComponent<NewPlayerController>();
+            controller2 = loadInstance(players[1].getCharacter(), StartTwo.transform.position, false).GetComponent<NewPlayerController>();
             controller2.setItem(players[1].getItemName());
             controller2.tag = "Player 2";
             
@@ -70,9 +73,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void onClickBack()
-    {
+    public void onClickBack(){
         SceneManager.LoadScene(2);
+    }
+
+    public void onClickMainMenu() {
+        SceneManager.LoadScene(0);
     }
 
 }

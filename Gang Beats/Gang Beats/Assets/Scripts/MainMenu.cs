@@ -11,6 +11,8 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
+        AudioListener.pause = false;
         MainButtons.SetActive(true);
         OptionPanel.SetActive(false);
     }

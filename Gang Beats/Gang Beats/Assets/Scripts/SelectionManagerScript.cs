@@ -98,6 +98,8 @@ public class SelectionManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
+        AudioListener.pause = false;
         gameLoader = new GameLoader();
         player1Select = new CharacterSelector(loadInstanceFromList(gameLoader.getCharacterList(), new Vector3(-6, 0, 0), true));
         player2Select = new CharacterSelector(loadInstanceFromList(gameLoader.getCharacterList(), new Vector3(6, 0, 0), true));
@@ -142,7 +144,11 @@ public class SelectionManagerScript : MonoBehaviour
         GameGlobal.getInstance().setGameModel(gameLoader.createGame(players));
         SceneManager.LoadScene(1);
     }
-    
+
+    public void onClickMainMenu() {
+        SceneManager.LoadScene(0);
+    }
+
     // Update is called once per frame
     void Update()
     {

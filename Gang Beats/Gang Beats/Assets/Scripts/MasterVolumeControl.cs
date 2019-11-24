@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MasterVolumeControl : MonoBehaviour
 {
@@ -8,8 +9,12 @@ public class MasterVolumeControl : MonoBehaviour
     //[SerializeField]
     //private AudioSource audioSrc;
     private float masterVolume = 1.0f;
+    public Slider volumeSlider;
 
-
+    private void Start()
+    {
+        volumeSlider.value = AudioListener.volume;
+    }
     void Update()
     {
         //Debug.Log(masterVolume);

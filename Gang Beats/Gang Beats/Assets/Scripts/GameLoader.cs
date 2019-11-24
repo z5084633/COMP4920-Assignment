@@ -22,7 +22,7 @@ namespace Assets
             itemSelectIndicator = "PreFabs/Items/Selected";
             itemsList = new List<string>();
             itemsList.Add("PreFabs/Items/RedPotion");
-            itemsList.Add("PreFabs/Items/YellowPotion");
+            //itemsList.Add("PreFabs/Items/YellowPotion");
             itemsList.Add("PreFabs/Items/BluePotion");
             itemsList.Add("PreFabs/Items/GreenPotion");
         }

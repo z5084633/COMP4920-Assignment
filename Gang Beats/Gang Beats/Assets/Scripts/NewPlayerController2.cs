@@ -39,10 +39,10 @@ public class NewPlayerController2 : NewPlayerController
         if (gameObject.transform.localScale.x < 0)
         {
             Spawnedbullet.transform.Rotate(new Vector3(0, 180, 0));
-            Spawnedbullet.GetComponent<Rigidbody2D>().velocity = Vector2.left * 10;
+            Spawnedbullet.GetComponent<Rigidbody2D>().velocity = Vector2.left * 12;
         }
         else {
-            Spawnedbullet.GetComponent<Rigidbody2D>().velocity = Vector2.right * 10;
+            Spawnedbullet.GetComponent<Rigidbody2D>().velocity = Vector2.right * 12;
         }
 
 
